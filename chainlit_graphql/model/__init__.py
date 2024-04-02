@@ -4,3 +4,4 @@ from .thread import Thread  # noqa: F401
 from .step import Step  # noqa: F401
 from .feedback import Feedback  # noqa: F401
 from .apikey import ApiKey  # noqa: F401
+from .vectoritem import Item  # noqa: F401

@@ -2,10 +2,17 @@ from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.orm import sessionmaker
 from chainlit_graphql.core.config import settings
 
+import logging
+
+# Configure root logger to log at DEBUG level
+logging.basicConfig(level=logging.DEBUG)
+
+# Set SQLAlchemy log to output SQL queries
+logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
 
 class DatabaseSession:
     def __init__(self, url: str = settings.DATABASE_URI.unicode_string()):
-        self.engine = create_async_engine(url, echo=False)
+        self.engine = create_async_engine(url, echo=True)
         self.SessionLocal = sessionmaker(
             bind=self.engine,
             class_=AsyncSession,

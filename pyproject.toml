@@ -23,6 +23,7 @@ uvicorn = "^0.28.0"
 injector = "^0.21.0"
 python-jose = {extras = ["cryptography"], version = "^3.3.0"}
 bcrypt = "^4.1.2"
+pgvector = "^0.2.5"
 
 [tool.poetry.group.dev.dependencies]
 pytest-asyncio = "^0.23.5"
